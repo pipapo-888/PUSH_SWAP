@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/02 17:42:16 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/02 17:52:21 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void push_swap(t_stacks stack, int element)
 	// rotate_a(&stack, 1);
 	// rotate_b(&stack, 1);
 	// rr(&stack);
-	reverse_rotate_a(&stack, 1);
-	reverse_rotate_b(&stack, 1);
+	// reverse_rotate_a(&stack, 1);
+	// reverse_rotate_b(&stack, 1);
 	push_b(&stack);
 
 
