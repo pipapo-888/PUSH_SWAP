@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-/*   Updated: 2025/07/31 20:23:07 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/02 17:42:16 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,29 @@ void push_swap(t_stacks stack, int element)
 	int i = 0;
 	int b[element + 1];
 
-	swap_a(&stack);
-	for (int i = 0; i < element; i++)
-		ft_printf("%d %d\n", stack.a.data[i], stack.a.size);
+	// swap_a(&stack, 1);
+	// swap_b(&stack, 1);
+	// ss(&stack);
+	// push_a(&stack);
+	// push_b(&stack);
+	// rotate_a(&stack, 1);
+	// rotate_b(&stack, 1);
+	// rr(&stack);
+	reverse_rotate_a(&stack, 1);
+	reverse_rotate_b(&stack, 1);
+	push_b(&stack);
 
+
+
+	// push_a(&stack);
+
+	printf("Stack A\n");
+	for (int i = 0; i < stack.a.size; i++)
+		ft_printf("%d %d\n", stack.a.data[i], stack.a.size);
+	printf("Stack B\n");
+	for (int i = 0; i < stack.b.size; i++)
+		ft_printf("%d %d\n", stack.b.data[i], stack.b.size);
+	// printf("%d", stack.a.data[4]);
 
 
 
