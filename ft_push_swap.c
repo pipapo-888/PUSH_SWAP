@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/03 15:02:26 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:23:22 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,35 @@ void sort_2(t_stacks *stack)
 
 void sort_3(t_stacks *stack)
 {
+	int a;
+	int b;
+	int c;
+
+	a = stack->a.data[0];
+	b = stack->a.data[1];
+	c = stack->a.data[2];
 	if (is_sorted(stack -> a))
-	{
-		printf("ソート済み\n");
 		return ;
+	if (a > b && b > c)
+	{
+		swap_a(stack, 1);
+		reverse_rotate_a(stack, 1);
 	}
-	
+	if (a > b && b < c && a > c)
+		rotate_a(stack, 1);
+	if (a < b && b > c && a < c)
+	{
+		swap_a(stack ,1);
+		rotate_a(stack, 1);
+	}
+	if (a > b && b < c && a < c)
+		swap_a(stack , 1);
+	if (a < b && b > c && a > c)
+		reverse_rotate_a(stack, 1);
 }
 
 void push_swap(t_stacks *stack, int element)
 {
-	int i = 0;
-	int b[element + 1];
-
 	// swap_a(stack, 1);
 	// swap_b(stack, 1);
 	// ss(stack);
@@ -64,17 +80,12 @@ void push_swap(t_stacks *stack, int element)
 	// rr(stack);
 	// reverse_rotate_a(stack, 1);
 	// reverse_rotate_b(stack, 1);
-	// push_b(stack);
-
-	// push_a(stack);
-
+	// rra(stack);
 
 	if (element == 2)
 		sort_2(stack);
 	if (element ==  3)
 		sort_3(stack);
-
-
 
 	printf("Stack A\n");
 	for (int i = 0; i < stack->a.size; i++)
@@ -84,7 +95,6 @@ void push_swap(t_stacks *stack, int element)
 	for (int i = 0; i < stack->b.size; i++)
 		ft_printf("%d %d\n", stack->b.data[i], stack->b.size);
 	if (stack->b.size == 0) printf("なし\n");
-
 }
 
 int	main(int argc, char *argv[])
