@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 12:44:03 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/03 14:16:13 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:44:34 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,26 @@ int	ft_safe_atoi(const char *str, int *error)
 	if (minus * result > INT_MAX || minus * result < INT_MIN)
 		*error = 1;
 	return (minus * result);
+}
+
+void has_double(int *data, int size, int *error)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (data[i] == data[j])
+			{
+				*error = 1;
+				return ;
+			}
+		j++;
+		}
+		i++;
+	}
 }

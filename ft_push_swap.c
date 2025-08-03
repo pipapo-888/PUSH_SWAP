@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/03 18:23:22 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:54:48 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,12 +108,13 @@ int	main(int argc, char *argv[])
 	while (i < argc - 1)
 	{
 		stack.a.data[i] = ft_safe_atoi(argv[i + 1], &error);
-		if (error)
-		{
-			write(2, "Error\n", 6);
-			return (1);
-		}
 		i++;
+	}
+	has_double(stack.a.data, argc - 1, &error);
+	if (error)
+	{
+		write(2, "Error\n", 6);
+		return (1);
 	}
 	stack.a.size = argc - 1;
 	stack.b.size = 0;

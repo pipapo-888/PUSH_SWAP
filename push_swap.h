@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/02 17:52:03 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/03 18:40:27 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void rr(t_stacks *stack);
 void reverse_rotate_a(t_stacks *stack, int print);
 void reverse_rotate_b(t_stacks *stack, int print);
 void rrr(t_stacks *stack);
+
+int	ft_safe_atoi(const char *str, int *error);
+
+void has_double(int *data, int size, int *error);
 
 
 #endif
