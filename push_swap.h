@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "LIBFT/libft.h"
+// #include "LIBFT/libft.h"
 #include "PRINTF/ft_printf.h"
 
 #define MAX_SIZE 1000
