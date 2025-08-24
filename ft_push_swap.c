@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/03 18:54:48 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/24 17:51:49 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,72 @@ void sort_3(t_stacks *stack)
 		reverse_rotate_a(stack, 1);
 }
 
+void bubble_sort(int *arr, int size)
+{
+	int i;
+	int j;
+	int temp;
+
+	i = 0;
+	j = 0;
+
+	while (i < size - 1)
+	{
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+}
+
+void set_rank(t_rank *rank)
+{
+	int temp[MAX_SIZE];
+	int i;
+	int ran;
+
+	i = 0;
+	while (i < rank -> size)
+	{
+		temp[i] = rank->data[i];
+		i++;
+	}
+	bubble_sort(temp, rank->size);
+	i = 0;
+	while (i < rank->size)
+	{
+		ran = 0;
+		while (temp[ran] != rank->data[i])
+			ran++;
+		rank->rank[i] = ran;
+		i++;
+	}
+
+	    printf("size: %d\n", rank->size);
+    printf("Index | Data | Rank\n");
+    printf("---------------------\n");
+    for (int i = 0; i < rank->size; i++)
+    {
+        printf("%5d | %4d | %4d\n", i, rank->data[i], rank->rank[i]);
+    }
+}
+
 void push_swap(t_stacks *stack, int element)
 {
+	t_rank rank;
+	for (int i = 0; i < stack->a.size - 1; i++)
+		rank.data[i] = stack->a.data[i];
+	rank.size = stack->a.size;
+
+	set_rank(&rank);
 	// swap_a(stack, 1);
 	// swap_b(stack, 1);
 	// ss(stack);
@@ -87,13 +151,15 @@ void push_swap(t_stacks *stack, int element)
 	if (element ==  3)
 		sort_3(stack);
 
+
+
 	printf("Stack A\n");
 	for (int i = 0; i < stack->a.size; i++)
 		ft_printf("%d %d\n", stack->a.data[i], stack->a.size);
 	if (stack->a.size == 0) printf("なし\n");
 	printf("Stack B\n");
 	for (int i = 0; i < stack->b.size; i++)
-		ft_printf("%d %d\n", stack->b.data[i], stack->b.size);
+		ft_printf("%d %d\n", stack->b.data[i],  stack->b.size);
 	if (stack->b.size == 0) printf("なし\n");
 }
 

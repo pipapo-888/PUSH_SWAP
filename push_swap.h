@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/03 18:40:27 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/24 17:41:30 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@
 
 typedef struct {
 	int data[MAX_SIZE];
+	int rank[MAX_SIZE];
+	int size;
+} t_rank;
+
+typedef struct {
+	int data[MAX_SIZE];
+	// int rank[MAX_SIZE];
 	int size;
 } t_stack;
 
