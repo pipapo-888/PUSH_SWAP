@@ -6,22 +6,21 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 00:47:25 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 03:59:22 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
 
-void bubble_sort(int *arr, int size)
+void	bubble_sort(int *arr, int size)
 {
-	int i;
-	int j;
-	int temp;
+	int	i;
+	int	j;
+	int	temp;
 
 	i = 0;
 	j = 0;
-
 	while (i < size - 1)
 	{
 		while (j < size - i - 1)
@@ -39,11 +38,11 @@ void bubble_sort(int *arr, int size)
 	}
 }
 
-void set_rank(t_stacks *stack)
+void	set_rank(t_stacks *stack)
 {
-	int temp[MAX_SIZE];
-	int i;
-	int ran;
+	int	temp[MAX_SIZE];
+	int	i;
+	int	ran;
 
 	i = 0;
 	while (i < stack->a.size)
@@ -61,54 +60,42 @@ void set_rank(t_stacks *stack)
 		stack->a.data[i].rank = ran;
 		i++;
 	}
-
-	printf("size: %d\n", stack->a.size);
-    printf(" Data | Rank\n");
-    printf("-------------\n");
-    for (int i = 0; i < stack->a.size; i++)
-    {
-        printf("%5d | %4d\n", stack->a.data[i].data, stack->a.data[i].rank);
-    }
+	// printf("size: %d\n", stack->a.size);
+	// printf(" Data | Rank\n");
+	// printf("-------------\n");
+	// for (int i = 0; i < stack->a.size; i++)
+	// 	printf("%5d | %4d\n", stack->a.data[i].data, stack->a.data[i].rank);
 }
 
-void push_swap(t_stacks *stack, int element)
+void	push_swap(t_stacks *stack, int element)
 {
 	set_rank(stack);
-	// swap_a(stack, 1);
-	// swap_b(stack, 1);
-	// ss(stack);
-	// push_a(stack);
-	// push_b(stack);
-	// rotate_a(stack, 1);
-	// rotate_b(stack, 1);
-	// rr(stack);
-	// reverse_rotate_a(stack, 1);
-	// reverse_rotate_b(stack, 1);
-	// rra(stack);
-
 	if (element == 2)
 		sort_2(stack);
-	else if (element ==  3)
+	else if (element == 3)
 		sort_3(stack);
 	else if (element == 5)
 		sort_5(stack);
+	else
+		sort_all(stack);
 
-
-	printf("Stack A\n");
-	for (int i = 0; i < stack->a.size; i++)
-		ft_printf("%d %d\n", stack->a.data[i].data, stack->a.size);
-	if (stack->a.size == 0) printf("なし\n");
-	printf("Stack B\n");
-	for (int i = 0; i < stack->b.size; i++)
-		ft_printf("%d %d\n", stack->b.data[i].data,  stack->b.size);
-	if (stack->b.size == 0) printf("なし\n");
+	// printf("Stack A\n");
+	// for (int i = 0; i < stack->a.size; i++)
+	// 	ft_printf("%d %d\n", stack->a.data[i].data, stack->a.size);
+	// if (stack->a.size == 0)
+	// 	printf("なし\n");
+	// printf("Stack B\n");
+	// for (int i = 0; i < stack->b.size; i++)
+	// 	ft_printf("%d %d\n", stack->b.data[i].data,  stack->b.size);
+	// if (stack->b.size == 0)
+	// 	printf("なし\n");
 }
 
 int	main(int argc, char *argv[])
 {
-	t_stacks stack;
-	int i;
-	int error;
+	t_stacks	stack;
+	int			i;
+	int			error;
 
 	error = 0;
 	i = 0;
