@@ -6,95 +6,12 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/30 20:56:01 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 00:47:25 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "push_swap.h"
-
-int	is_sorted(t_stack a)
-{
-	int	i;
-
-	i = 0;
-	while (i < a.size - 1)
-	{
-		if (a.data[i].data > a.data[i + 1].data)
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void sort_2(t_stacks *stack)
-{
-	if (is_sorted(stack -> a))
-	{
-		printf("ソート済み\n");
-		return ;
-	}
-	else
-		swap_a(stack, 1);
-	printf("ソートしたよ\n");
-}
-
-void sort_3(t_stacks *stack)
-{
-	int a;
-	int b;
-	int c;
-
-	a = stack->a.data[0].data;
-	b = stack->a.data[1].data;
-	c = stack->a.data[2].data;
-	if (is_sorted(stack -> a))
-		return ;
-	if (a > b && b > c)
-	{
-		swap_a(stack, 1);
-		reverse_rotate_a(stack, 1);
-	}
-	if (a > b && b < c && a > c)
-		rotate_a(stack, 1);
-	if (a < b && b > c && a < c)
-	{
-		swap_a(stack ,1);
-		rotate_a(stack, 1);
-	}
-	if (a > b && b < c && a < c)
-		swap_a(stack , 1);
-	if (a < b && b > c && a > c)
-		reverse_rotate_a(stack, 1);
-}
-
-void sort_5(t_stacks *stack)
-{
-	int i = 0;
-
-	while (stack->a.data[i].rank != 0)
-		i++;
-
-	if (i == 0)
-	{
-		push_b(stack);
-		return ;
-	}
-
-	while ((i == 1 || i == 2))
-	{
-		rotate_a(stack, 1);
-		i--;
-	}
-	while (i == 3 || i == 4)
-	{
-		reverse_rotate_a(stack, 1);
-		i++;
-	}
-	push_b(stack);
-
-
-}
 
 void bubble_sort(int *arr, int size)
 {
