@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/24 17:41:30 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/30 17:16:03 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@
 #define MAX_SIZE 1000
 
 typedef struct {
-	int data[MAX_SIZE];
-	int rank[MAX_SIZE];
-	int size;
+	int data;
+	int rank;
 } t_rank;
 
 typedef struct {
-	int data[MAX_SIZE];
-	// int rank[MAX_SIZE];
+	t_rank data[MAX_SIZE];
 	int size;
 } t_stack;
 
@@ -49,7 +47,7 @@ void rrr(t_stacks *stack);
 
 int	ft_safe_atoi(const char *str, int *error);
 
-void has_double(int *data, int size, int *error);
+void has_double(t_rank *data, int size, int *error);
 
 
 #endif
