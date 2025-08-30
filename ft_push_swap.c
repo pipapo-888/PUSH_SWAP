@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 03:59:22 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 05:47:21 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,8 @@ void	push_swap(t_stacks *stack, int element)
 		sort_3(stack);
 	else if (element == 5)
 		sort_5(stack);
-	else
-		sort_all(stack);
+	// else
+	// 	sort_all(stack);
 
 	// printf("Stack A\n");
 	// for (int i = 0; i < stack->a.size; i++)

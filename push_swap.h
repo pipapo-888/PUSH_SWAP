@@ -6,51 +6,53 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 00:48:04 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 05:49:05 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-// #include "LIBFT/libft.h"
-#include "PRINTF/ft_printf.h"
+# include "LIBFT/libft.h"
+# include "PRINTF/ft_printf.h"
 
-#define MAX_SIZE 1000
+# define MAX_SIZE 1000
 
-typedef struct {
-	int data;
-	int rank;
-} t_rank;
+typedef struct s_rank
+{
+	int	data;
+	int	rank;
+}	t_rank;
 
-typedef struct {
-	t_rank data[MAX_SIZE];
-	int size;
-} t_stack;
+typedef struct s_rank
+{
+	t_rank	data[MAX_SIZE];
+	int		size;
+}	t_stack;
 
-typedef struct {
-	t_stack a;
-	t_stack b;
-} t_stacks;
+typedef struct s_stacks
+{
+	t_stack	a;
+	t_stack	b;
+}	t_stacks;
 
-void swap_a(t_stacks *stack, int print);
-void swap_b(t_stacks *stack, int print);
-void ss(t_stacks *stack);
-void push_a(t_stacks *stack);
-void push_b(t_stacks *stack);
-void rotate_a(t_stacks *stack, int print);
-void rotate_b(t_stacks *stack, int print);
-void rr(t_stacks *stack);
-void reverse_rotate_a(t_stacks *stack, int print);
-void reverse_rotate_b(t_stacks *stack, int print);
-void rrr(t_stacks *stack);
+void	swap_a(t_stacks *stack, int print);
+void	swap_b(t_stacks *stack, int print);
+void	ss(t_stacks *stack);
+void	push_a(t_stacks *stack);
+void	push_b(t_stacks *stack);
+void	rotate_a(t_stacks *stack, int print);
+void	rotate_b(t_stacks *stack, int print);
+void	rr(t_stacks *stack);
+void	reverse_rotate_a(t_stacks *stack, int print);
+void	reverse_rotate_b(t_stacks *stack, int print);
+void	rrr(t_stacks *stack);
 
-void sort_2(t_stacks *stack);
-void sort_3(t_stacks *stack);
-void sort_5(t_stacks *stack);
+void	sort_2(t_stacks *stack);
+void	sort_3(t_stacks *stack);
+void	sort_5(t_stacks *stack);
 
-int	ft_safe_atoi(const char *str, int *error);
-void has_double(t_rank *data, int size, int *error);
-
+int		ft_safe_atoi(const char *str, int *error);
+void	has_double(t_rank *data, int size, int *error);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 00:42:04 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 03:18:25 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 05:40:18 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sort_3(t_stacks *stack)
 
 void	which_to_push_b(t_stacks *stack, int target)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stack->a.size && stack->a.data[i].rank != target)

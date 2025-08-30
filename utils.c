@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 12:44:03 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/30 17:15:41 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 05:36:45 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 int	ft_safe_atoi(const char *str, int *error)
 {
 	long	result;
-	int	minus;
-	int	i;
+	int		minus;
+	int		i;
 
 	minus = 1;
 	result = 0;
 	i = 1;
-	if (!(str[0] == '-' || str[0] == '+' ||(str[0] >= '0' && str[0] <= '9')))
-			*error = 1;
+	if (!(str[0] == '-' || str[0] == '+' || (str[0] >= '0' && str[0] <= '9')))
+		*error = 1;
 	while (str[i])
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
@@ -41,10 +41,10 @@ int	ft_safe_atoi(const char *str, int *error)
 	return (minus * result);
 }
 
-void has_double(t_rank *data, int size, int *error)
+void	has_double(t_rank *data, int size, int *error)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < size)
@@ -57,7 +57,7 @@ void has_double(t_rank *data, int size, int *error)
 				*error = 1;
 				return ;
 			}
-		j++;
+			j++;
 		}
 		i++;
 	}
