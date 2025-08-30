@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:41:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/02 15:06:50 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/30 16:58:01 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void push_a(t_stacks *stack)
 {
 	if (stack->b.size == 0)
 		return;
-	for (int i = stack -> a.size; i > 0; i--)
+	for (int i = stack->a.size; i > 0; i--)
 	{
 		stack->a.data[i] = stack->a.data[i - 1];
 	}

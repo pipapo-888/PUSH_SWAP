@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:48:32 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/02 17:32:06 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/30 17:28:45 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void reverse_rotate_a(t_stacks *stack, int print)
 {
-	int temp;
+	t_rank temp;
 
 	if (stack->a.size == 0)
 		return ;
@@ -30,7 +30,7 @@ void reverse_rotate_a(t_stacks *stack, int print)
 
 void reverse_rotate_b(t_stacks *stack, int print)
 {
-	int temp;
+	t_rank temp;
 
 	if (stack->b.size == 0)
 		return ;

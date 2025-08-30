@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:13:49 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/02 17:07:59 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/30 17:12:57 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void rotate_a(t_stacks *stack, int print)
 {
-	int temp;
+	t_rank temp;
 
 	if (stack->a.size == 0)
 		return ;
@@ -30,7 +30,7 @@ void rotate_a(t_stacks *stack, int print)
 
 void rotate_b(t_stacks *stack, int print)
 {
-	int temp;
+	t_rank temp;
 
 	if (stack->b.size == 0)
 		return ;
