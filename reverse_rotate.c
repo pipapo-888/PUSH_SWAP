@@ -6,45 +6,51 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:48:32 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/30 17:28:45 by knomura          ###   ########.fr       */
+/*   Updated: 2025/08/31 05:31:33 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void reverse_rotate_a(t_stacks *stack, int print)
+void	reverse_rotate_a(t_stacks *stack, int print)
 {
-	t_rank temp;
+	t_rank	temp;
+	int		i;
 
 	if (stack->a.size == 0)
 		return ;
+	i = stack->a.size;
 	temp = stack->a.data[stack->a.size - 1];
-	for (int i = stack->a.size - 1; i > 0; i--)
+	while (i > 0)
 	{
 		stack->a.data[i] = stack->a.data[i - 1];
+		i--;
 	}
 	stack->a.data[0] = temp;
 	if (print)
-	ft_printf("rra\n");
+		ft_printf("rra\n");
 }
 
-void reverse_rotate_b(t_stacks *stack, int print)
+void	reverse_rotate_b(t_stacks *stack, int print)
 {
-	t_rank temp;
+	t_rank	temp;
+	int		i;
 
 	if (stack->b.size == 0)
 		return ;
+	i = stack->b.size;
 	temp = stack->b.data[stack->b.size - 1];
-	for (int i = stack->b.size - 1; i > 0; i--)
+	while (i > 0)
 	{
 		stack->b.data[i] = stack->b.data[i - 1];
+		i--;
 	}
 	stack->b.data[0] = temp;
 	if (print)
-	ft_printf("rrb\n");
+		ft_printf("rrb\n");
 }
 
-void rrr(t_stacks *stack)
+void	rrr(t_stacks *stack)
 {
 	reverse_rotate_a(stack, 0);
 	reverse_rotate_b(stack, 0);
