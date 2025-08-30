@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 12:42:16 by knomura           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/08/24 17:51:49 by knomura          ###   ########.fr       */
-=======
-/*   Updated: 2025/08/03 21:15:44 by knomura          ###   ########.fr       */
->>>>>>> 17a3e0bd6fbbbbd67455f6b0bfb8da81de8430cc
+/*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
+/*   Updated: 2025/08/30 20:56:01 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +20,7 @@ int	is_sorted(t_stack a)
 	i = 0;
 	while (i < a.size - 1)
 	{
-		if (a.data[i] > a.data[i + 1])
+		if (a.data[i].data > a.data[i + 1].data)
 			return (0);
 		i++;
 	}
@@ -49,9 +45,9 @@ void sort_3(t_stacks *stack)
 	int b;
 	int c;
 
-	a = stack->a.data[0];
-	b = stack->a.data[1];
-	c = stack->a.data[2];
+	a = stack->a.data[0].data;
+	b = stack->a.data[1].data;
+	c = stack->a.data[2].data;
 	if (is_sorted(stack -> a))
 		return ;
 	if (a > b && b > c)
@@ -70,6 +66,34 @@ void sort_3(t_stacks *stack)
 		swap_a(stack , 1);
 	if (a < b && b > c && a > c)
 		reverse_rotate_a(stack, 1);
+}
+
+void sort_5(t_stacks *stack)
+{
+	int i = 0;
+
+	while (stack->a.data[i].rank != 0)
+		i++;
+
+	if (i == 0)
+	{
+		push_b(stack);
+		return ;
+	}
+
+	while ((i == 1 || i == 2))
+	{
+		rotate_a(stack, 1);
+		i--;
+	}
+	while (i == 3 || i == 4)
+	{
+		reverse_rotate_a(stack, 1);
+		i++;
+	}
+	push_b(stack);
+
+
 }
 
 void bubble_sort(int *arr, int size)
@@ -98,46 +122,41 @@ void bubble_sort(int *arr, int size)
 	}
 }
 
-void set_rank(t_rank *rank)
+void set_rank(t_stacks *stack)
 {
 	int temp[MAX_SIZE];
 	int i;
 	int ran;
 
 	i = 0;
-	while (i < rank -> size)
+	while (i < stack->a.size)
 	{
-		temp[i] = rank->data[i];
+		temp[i] = stack->a.data[i].data;
 		i++;
 	}
-	bubble_sort(temp, rank->size);
+	bubble_sort(temp, stack->a.size);
 	i = 0;
-	while (i < rank->size)
+	while (i < stack->a.size)
 	{
 		ran = 0;
-		while (temp[ran] != rank->data[i])
+		while (temp[ran] != stack->a.data[i].data)
 			ran++;
-		rank->rank[i] = ran;
+		stack->a.data[i].rank = ran;
 		i++;
 	}
 
-	    printf("size: %d\n", rank->size);
-    printf("Index | Data | Rank\n");
-    printf("---------------------\n");
-    for (int i = 0; i < rank->size; i++)
+	printf("size: %d\n", stack->a.size);
+    printf(" Data | Rank\n");
+    printf("-------------\n");
+    for (int i = 0; i < stack->a.size; i++)
     {
-        printf("%5d | %4d | %4d\n", i, rank->data[i], rank->rank[i]);
+        printf("%5d | %4d\n", stack->a.data[i].data, stack->a.data[i].rank);
     }
 }
 
 void push_swap(t_stacks *stack, int element)
 {
-	t_rank rank;
-	for (int i = 0; i < stack->a.size - 1; i++)
-		rank.data[i] = stack->a.data[i];
-	rank.size = stack->a.size;
-
-	set_rank(&rank);
+	set_rank(stack);
 	// swap_a(stack, 1);
 	// swap_b(stack, 1);
 	// ss(stack);
@@ -152,18 +171,19 @@ void push_swap(t_stacks *stack, int element)
 
 	if (element == 2)
 		sort_2(stack);
-	if (element ==  3)
+	else if (element ==  3)
 		sort_3(stack);
-
+	else if (element == 5)
+		sort_5(stack);
 
 
 	printf("Stack A\n");
 	for (int i = 0; i < stack->a.size; i++)
-		ft_printf("%d %d\n", stack->a.data[i], stack->a.size);
+		ft_printf("%d %d\n", stack->a.data[i].data, stack->a.size);
 	if (stack->a.size == 0) printf("なし\n");
 	printf("Stack B\n");
 	for (int i = 0; i < stack->b.size; i++)
-		ft_printf("%d %d\n", stack->b.data[i],  stack->b.size);
+		ft_printf("%d %d\n", stack->b.data[i].data,  stack->b.size);
 	if (stack->b.size == 0) printf("なし\n");
 }
 
@@ -177,7 +197,7 @@ int	main(int argc, char *argv[])
 	i = 0;
 	while (i < argc - 1)
 	{
-		stack.a.data[i] = ft_safe_atoi(argv[i + 1], &error);
+		stack.a.data[i].data = ft_safe_atoi(argv[i + 1], &error);
 		i++;
 	}
 	has_double(stack.a.data, argc - 1, &error);
