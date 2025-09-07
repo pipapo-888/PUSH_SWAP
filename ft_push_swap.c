@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/07 21:32:02 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/07 21:35:01 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ void	set_rank(t_stacks *stack)
 	}
 }
 
-int find_max_bits(int size)
+int	find_max_bits(int size)
 {
-	int max_bits;
+	int	max_bits;
 
 	max_bits = 0;
 	while ((size >> max_bits) != 0)
@@ -72,15 +72,14 @@ int find_max_bits(int size)
 	return (max_bits);
 }
 
-void	sort_all(t_stacks *stack)
+void	sort_all(t_stacks *stack, int size)
 {
-	int max_bits;
-	int	size;
+	int	max_bits;
 	int	rank_num;
 	int	i;
-	int j;
+	int	j;
 
-	max_bits = find_max_bits(stack->a.size - 1);
+	max_bits = find_max_bits(size);
 	i = 0;
 	while (i < max_bits)
 	{
@@ -102,7 +101,6 @@ void	sort_all(t_stacks *stack)
 	return ;
 }
 
-
 void	push_swap(t_stacks *stack, int element)
 {
 	set_rank(stack);
@@ -113,7 +111,7 @@ void	push_swap(t_stacks *stack, int element)
 	else if (element == 5)
 		sort_5(stack);
 	else
-		sort_all(stack);
+		sort_all(stack, stack->a.size - 1);
 }
 
 int	main(int argc, char *argv[])
