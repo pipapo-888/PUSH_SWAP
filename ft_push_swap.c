@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/07 21:30:29 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/07 21:32:02 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,6 @@ void	set_rank(t_stacks *stack)
 		stack->a.data[i].rank = ran;
 		i++;
 	}
-	// printf("size: %d\n", stack->a.size);
-	// printf(" Data | Rank\n");
-	// printf("-------------\n");
-	// for (int i = 0; i < stack->a.size; i++)
-	// 	printf("%5d | %4d\n", stack->a.data[i].data, stack->a.data[i].rank);
 }
 
 int find_max_bits(int size)
@@ -119,17 +114,6 @@ void	push_swap(t_stacks *stack, int element)
 		sort_5(stack);
 	else
 		sort_all(stack);
-
-	// printf("Stack A\n");
-	// for (int i = 0; i < stack->a.size; i++)
-	// 	ft_printf("%d %d\n", stack->a.data[i].data, stack->a.size);
-	// if (stack->a.size == 0)
-	// 	printf("なし\n");
-	// printf("Stack B\n");
-	// for (int i = 0; i < stack->b.size; i++)
-	// 	ft_printf("%d %d\n", stack->b.data[i].data,  stack->b.size);
-	// if (stack->b.size == 0)
-	// 	printf("なし\n");
 }
 
 int	main(int argc, char *argv[])
