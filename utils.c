@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 12:44:03 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 05:36:45 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/07 21:40:35 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,55 @@ void	has_double(t_rank *data, int size, int *error)
 			}
 			j++;
 		}
+		i++;
+	}
+}
+
+void	bubble_sort(int *arr, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	j = 0;
+	while (i < size - 1)
+	{
+		while (j < size - i - 1)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+}
+
+void	set_rank(t_stacks *stack)
+{
+	int	temp[MAX_SIZE];
+	int	i;
+	int	ran;
+
+	i = 0;
+	while (i < stack->a.size)
+	{
+		temp[i] = stack->a.data[i].data;
+		i++;
+	}
+	bubble_sort(temp, stack->a.size);
+	i = 0;
+	while (i < stack->a.size)
+	{
+		ran = 0;
+		while (temp[ran] != stack->a.data[i].data)
+			ran++;
+		stack->a.data[i].rank = ran;
 		i++;
 	}
 }
