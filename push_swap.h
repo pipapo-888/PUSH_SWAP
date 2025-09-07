@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/07 12:13:18 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/07 21:38:06 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	sort_5(t_stacks *stack);
 
 int		ft_safe_atoi(const char *str, int *error);
 void	has_double(t_rank *data, int size, int *error);
+void	set_rank(t_stacks *stack);
 
 #endif
