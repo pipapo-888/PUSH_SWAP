@@ -105,7 +105,7 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	has_double(stack.a.data, argc - 1, &error);
-	if (error)
+	if (error || argc == 1)
 	{
 		write(2, "Error\n", 6);
 		return (1);
