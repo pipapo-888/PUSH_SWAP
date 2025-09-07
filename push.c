@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 17:41:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 04:07:02 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/07 19:58:42 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	push_a(t_stacks *stack)
 		stack->b.data[i] = stack->b.data[i + 1];
 		i++;
 	}
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 
 void	push_b(t_stacks *stack)
@@ -57,5 +57,5 @@ void	push_b(t_stacks *stack)
 		stack->a.data[i] = stack->a.data[i + 1];
 		i++;
 	}
-	printf("pb\n");
+	ft_printf("pb\n");
 }
