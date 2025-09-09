@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 14:55:53 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/07 21:41:00 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/09 19:49:21 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,10 @@ void	sort_all(t_stacks *stack, int size)
 	int	i;
 	int	j;
 
-	max_bits = find_max_bits(size);
+	max_bits = find_max_bits(size - 1);
 	i = 0;
 	while (i < max_bits)
 	{
-		size = stack->a.size;
 		j = 0;
 		while (j < size)
 		{
@@ -59,10 +58,10 @@ void	push_swap(t_stacks *stack, int element)
 		sort_2(stack);
 	else if (element == 3)
 		sort_3(stack);
-	else if (element == 5)
+	else if (element <= 5)
 		sort_5(stack);
 	else
-		sort_all(stack, stack->a.size - 1);
+		sort_all(stack, stack->a.size);
 }
 
 int	main(int argc, char *argv[])
@@ -86,6 +85,6 @@ int	main(int argc, char *argv[])
 	}
 	stack.a.size = argc - 1;
 	stack.b.size = 0;
-	push_swap(&stack, argc - 1);
+	push_swap(&stack, stack.a.size);
 	return (0);
 }

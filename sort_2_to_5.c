@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 00:42:04 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/09 15:42:21 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/09 18:21:14 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,10 @@ void	sort_5(t_stacks *stack)
 		return ;
 	}
 	which_to_push_b(stack, 1);
-	sort_3(stack);
+	if (stack->a.size == 3)
+		sort_3(stack);
+	else
+		sort_2(stack);
 	push_a(stack);
 	push_a(stack);
 }
