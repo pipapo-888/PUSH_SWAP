@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 00:42:04 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 05:40:18 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/09 15:42:21 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,9 @@ int	is_sorted(t_stack a)
 void	sort_2(t_stacks *stack)
 {
 	if (is_sorted(stack -> a))
-	{
-		printf("ソート済み\n");
 		return ;
-	}
 	else
 		swap_a(stack, 1);
-	printf("ソートしたよ\n");
 }
 
 void	sort_3(t_stacks *stack)
