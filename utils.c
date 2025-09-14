@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 12:44:03 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/14 17:09:30 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/14 17:51:29 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_error(const char *str, int *error)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	if (!((str[0] >= '0' && str[0] <= '9')
 			|| ((str[0] == '+' || str[0] == '-') && str[1] != '\0')))
 		*error = 1;
@@ -37,7 +37,6 @@ int	ft_safe_atoi(const char *str, int *error)
 
 	minus = 1;
 	result = 0;
-	i = 1;
 	check_error(str, error);
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')

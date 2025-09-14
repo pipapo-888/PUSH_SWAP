@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 00:42:04 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/14 16:46:29 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/14 17:43:06 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ int	is_sorted(t_stack a)
 
 void	sort_2(t_stacks *stack)
 {
-	if (is_sorted(stack -> a))
-		return ;
-	else
 		swap_a(stack, 1);
 }
 
@@ -43,8 +40,6 @@ void	sort_3(t_stacks *stack)
 	a = stack->a.data[0].data;
 	b = stack->a.data[1].data;
 	c = stack->a.data[2].data;
-	if (is_sorted(stack -> a))
-		return ;
 	if (a > b && b > c)
 	{
 		swap_a(stack, 1);
@@ -82,8 +77,6 @@ void	which_to_push_b(t_stacks *stack, int target)
 
 void	sort_5(t_stacks *stack)
 {
-	if (is_sorted(stack->a))
-		return ;
 	which_to_push_b(stack, 0);
 	if (is_sorted(stack->a))
 	{
