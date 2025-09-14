@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 12:54:13 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/07 21:38:06 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/14 12:33:36 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	reverse_rotate_a(t_stacks *stack, int print);
 void	reverse_rotate_b(t_stacks *stack, int print);
 void	rrr(t_stacks *stack);
 
+int		is_sorted(t_stack a);
 void	sort_2(t_stacks *stack);
 void	sort_3(t_stacks *stack);
 void	sort_5(t_stacks *stack);

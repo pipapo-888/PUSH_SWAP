@@ -6,12 +6,28 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/03 12:44:03 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/09 16:08:08 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/14 17:09:30 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <limits.h>
+
+void	check_error(const char *str, int *error)
+{
+	int	i;
+
+	i = 0;
+	if (!((str[0] >= '0' && str[0] <= '9')
+			|| ((str[0] == '+' || str[0] == '-') && str[1] != '\0')))
+		*error = 1;
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			*error = 1;
+		i++;
+	}
+}
 
 int	ft_safe_atoi(const char *str, int *error)
 {
@@ -22,22 +38,17 @@ int	ft_safe_atoi(const char *str, int *error)
 	minus = 1;
 	result = 0;
 	i = 1;
-	if (!(str[0] == '-' || str[0] == '+' || (str[0] >= '0' && str[0] <= '9')))
-		*error = 1;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			*error = 1;
-		i++;
-	}
+	check_error(str, error);
 	i = 0;
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			minus *= -1;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		result = result * 10 + (str[i++] - '0');
-	if (minus * result > INT_MAX || minus * result < INT_MIN)
-		*error = 1;
+		if (minus * result > INT_MAX || minus * result < INT_MIN)
+			*error = 1;
+	}
 	return (minus * result);
 }
 
