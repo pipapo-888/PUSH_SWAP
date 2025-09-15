@@ -6,11 +6,11 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:43:00 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/09 13:14:05 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/15 16:02:44 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	swap_a(t_stacks *stack, int print)
 {

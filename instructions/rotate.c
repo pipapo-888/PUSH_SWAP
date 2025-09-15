@@ -6,11 +6,11 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:13:49 by knomura           #+#    #+#             */
-/*   Updated: 2025/08/31 05:27:43 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/15 16:02:41 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_a(t_stacks *stack, int print)
 {
