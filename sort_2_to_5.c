@@ -6,7 +6,7 @@
 /*   By: knomura <knomura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 00:42:04 by knomura           #+#    #+#             */
-/*   Updated: 2025/09/14 17:43:06 by knomura          ###   ########.fr       */
+/*   Updated: 2025/09/19 16:38:36 by knomura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	is_sorted(t_stack a)
 
 void	sort_2(t_stacks *stack)
 {
-		swap_a(stack, 1);
+	swap_a(stack, 1);
 }
 
 void	sort_3(t_stacks *stack)
